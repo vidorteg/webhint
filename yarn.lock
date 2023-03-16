@@ -266,13 +266,6 @@
     lodash.isundefined "^3.0.1"
     lodash.uniq "^4.5.0"
 
-"@hint/utils-debug@[object Object]":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@hint/utils-debug/-/utils-debug-1.0.10.tgz#6dfc66c60e2979826c69132703c20a56638d4cee"
-  integrity sha512-OB3B0I4nv7HwH+hmYp97qiw+P6r4X8hgjnKBUZgotuPd4pib7VVFLXwhjQH7cjU8QSXqXOGbNjOmRZSwcTa61g==
-  dependencies:
-    debug "4.3.4"
-
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"
