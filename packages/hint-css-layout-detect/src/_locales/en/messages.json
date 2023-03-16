@@ -1,0 +1,14 @@
+{
+    "description": {
+        "description": "Metadata description",
+        "message": "Detect which css properties changes will trigger the layout rendering pipeline"
+    },
+    "name": {
+        "description": "Metadata name",
+        "message": "css-layout-detect"
+    },
+    "reportMessage": {
+        "description": "Metadata reportMessage",
+        "message": "Add localized error message here."
+    }
+}
