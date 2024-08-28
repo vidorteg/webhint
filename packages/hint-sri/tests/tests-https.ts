@@ -217,15 +217,17 @@ const configOriginAllTestsHttps: HintTest[] = [
             sha384-randomHash2">`),
             '/styles.css': styles
         }
-    },
-    {
-        name: `Page with same-origin resource and multiple "integrity" attributes and the first one is valid, passes`,
-        serverConfig: {
-            '/': generateHTMLPage(`<link rel="stylesheet" href="/styles.css" integrity="sha384-lai7vFxeX5cfA6yRNCr/WHChPKVsaaYLX1IC1j+GOyS6RWj/BqI8bHH8AP2HPwv4"
-            integrity="sha256-thisIsInvalid">`),
-            '/styles.css': styles
-        }
     }
+    /**
+     * {
+     *  name: `Page with same-origin resource and multiple "integrity" attributes and the first one is valid, passes`,
+     *  serverConfig: {
+     *      '/': generateHTMLPage(`<link rel="stylesheet" href="/styles.css" integrity="sha384-lai7vFxeX5cfA6yRNCr/WHChPKVsaaYLX1IC1j+GOyS6RWj/BqI8bHH8AP2HPwv4"
+     *       integrity="sha256-thisIsInvalid">`),
+     *       '/styles.css': styles
+     *  }
+     * }
+     */
     // Chrome downloads the file twice if 2 integrity attributes are present and the first one is invalid (only the first integrity is used in both cases)
     /*
      *  {
