@@ -73,6 +73,27 @@ export const releaseForBrowser = (url: string) => {
     };
 };
 
+export const updateVsCodeExtensionDependencies = (ctx: Context) => {
+    return () => {
+        const questions = [{
+            message: 'VSCode extension dependencies inside `webhint-packages.ts` need to be manually updated when needed, do you acknowledge this?',
+            name: 'manualupdate',
+            type: 'confirm'
+        }];
+
+        return inquirer(questions, async (answers: import('inquirer').Answers) => { // eslint-disable-line
+
+            if (!answers.manualupdate) {
+                debug(`User rejected changes`);
+
+                ctx.abort = true;
+            } else {
+                debug(`Acknowledge. User already updated vscode versions or skipped this release.`);
+            }
+        });
+    };
+};
+
 export const releaseForVSCode = async (ctx: Context) => {
     const pkg = ctx.packages.get('vscode-webhint');
 

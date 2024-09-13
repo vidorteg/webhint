@@ -17,7 +17,7 @@ import { cleanUp } from './tasks/clean-up';
 import { runTests } from './tasks/run-tests';
 import { validateChanges } from './tasks/validate-changes';
 import { validateEnvironment } from './tasks/validate-environment';
-import { confirmRelease, release, releaseForBrowser, releaseForOVSX, releaseForVSCode } from './tasks/release';
+import { confirmRelease, release, releaseForBrowser, releaseForOVSX, releaseForVSCode, updateVsCodeExtensionDependencies} from './tasks/release';
 import { commitPackagesChanges } from './tasks/commit-packages-changes';
 import { authenticateGitHub } from './tasks/authenticate-github';
 import { cleanWorkspace } from './tasks/clean-workspace';
@@ -95,6 +95,11 @@ const tasks = new Listr([
         title: 'Validate changes',
         skip: skipReasons(skipIfError, skipIfForced, skipIfJustRelease),
         task: taskErrorWrapper(validateChanges)
+    },
+    {
+        title: 'Manually update `webhint-packages` dependencies for extension-vscode package',
+        skip: skipReasons(skipIfError, skipIfAborted, skipIfTestMode),
+        task: updateVsCodeExtensionDependencies
     },
     {
         title: 'Build and test',
