@@ -9,7 +9,7 @@ const updateWebhintTimeout = 120000;
 
 /* istanbul ignore next */
 const installWebhint = (options: InstallOptions) => {
-    return installPackages(['@hint/configuration-development@latest', 'hint@latest', 'typescript@latest'], options);
+    return installPackages(['"@hint/configuration-development@8.3.20,', 'hint@7.1.13', 'typescript@latest'], options);
 };
 
 /**
